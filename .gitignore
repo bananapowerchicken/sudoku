@@ -5,4 +5,4 @@ $ cat .gitignore
 *.vcxproj.filters
 *.vcxproj.user
 *.vs
-*Debug
+sudoku/Debug
