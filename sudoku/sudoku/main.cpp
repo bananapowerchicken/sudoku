@@ -6,7 +6,7 @@ int main()
 	Cell c;
 	c.setRow(2);
 	c.setCol(7);
-	std::cout << c.isSameSquare(2, 2) << "\n";
+	c.setValue();
 
 	return 0;
 }
