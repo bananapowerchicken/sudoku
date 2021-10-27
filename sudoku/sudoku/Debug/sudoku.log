@@ -1,5 +1,5 @@
-﻿  Cell.cpp
-D:\code\sudoku\sudoku\sudoku\Cell.cpp(15,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  main.cpp
-  Создание кода...
+﻿  main.cpp
+D:\code\sudoku\sudoku\sudoku\main.cpp(9,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\code\sudoku\sudoku\sudoku\main.cpp(16,6): warning C4101: prev_j: неиспользованная локальная переменная
+D:\code\sudoku\sudoku\sudoku\main.cpp(15,6): warning C4101: prev_i: неиспользованная локальная переменная
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe
