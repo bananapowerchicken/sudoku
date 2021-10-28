@@ -8,8 +8,9 @@ bool Cell::isSameSquare(int row, int col)
 	if (row < 0 || col < 0)
 		return false;
 
-	if (std::abs(row - m_row) > 2 || std::abs(col - m_col) > 2)
+	if ( (row/3 != m_row/3) || (col/3 != m_col/3) )
 		return false;
+
 	return true; 
 }
 
@@ -63,6 +64,45 @@ int Cell::findMaxSquareCoords()
 	return 0;
 }
 
+void Cell::setSquare()
+{
+	if (m_row >= 0 && m_row <= 2) {
+		if (m_col >= 0 && m_col <= 2) {
+			m_sq = 0;
+		}
+		if (m_col >= 3 && m_col <= 5) {
+			m_sq = 1;
+		}
+		if (m_col >= 6 && m_col <= 8) {
+			m_sq = 3;
+		}
+	}
+
+	if (m_row >= 3 && m_row <= 5) {
+		if (m_col >= 0 && m_col <= 2) {
+			m_sq = 3;
+		}
+		if (m_col >= 3 && m_col <= 5) {
+			m_sq = 4;
+		}
+		if (m_col >= 6 && m_col <= 8) {
+			m_sq = 5;
+		}
+	}
+
+	if (m_row >= 6 && m_row <= 8) {
+		if (m_col >= 0 && m_col <= 2) {
+			m_sq = 6;
+		}
+		if (m_col >= 3 && m_col <= 5) {
+			m_sq = 7;
+		}
+		if (m_col >= 6 && m_col <= 8) {
+			m_sq = 8;
+		}
+	}
+}
+
 bool Cell::init(int i, int j)
 {
 	// задает координаты
@@ -70,6 +110,7 @@ bool Cell::init(int i, int j)
 
 	setRow(i);
 	setCol(j);	
+	//setSquare();
 
 	findMaxSquareCoords();
 	

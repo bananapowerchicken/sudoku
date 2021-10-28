@@ -6,6 +6,10 @@
 
 int main()
 {
+	Cell t;
+	t.init(0, 3);
+	
+
 	srand(time(NULL));// for truly randomizing
 
 	// создать пустой массив клеток
@@ -21,19 +25,16 @@ int main()
 		{
 			arr[i][j].init(i, j);
 			// почему-то заполняет все одинаковыми значениями
-			std::cout << arr[i][j].getValue() << " ";
+			//std::cout << arr[i][j].getValue() << " ";
 		}
-		std::cout << "\n";
+		//std::cout << "\n";
 	}
-
-	std::cout << "\n";
 
 	for (int i = 0; i < 9; i++)
 	{
 		for (int j = 0; j < 9; j++)
 		{
-			arr[i][j].setValue();
-			// почему-то заполняет все одинаковыми значениями
+			arr[i][j].setValue();			
 			std::cout << arr[i][j].getValue() << " ";
 
 			// удаление возможных значений из смежных клеток , хотя бегать по всему массиву тут нет нужды
@@ -58,10 +59,10 @@ int main()
 
 			// смежный квадрат
 			for (int iii = arr[i][j].getMaxRow() - 2; iii <= arr[i][j].getMaxRow(); iii++)
-			{
+			{				
 				for (int jjj = arr[i][j].getMaxCol() - 2; jjj <= arr[i][j].getMaxCol(); jjj++)
 				{
-					if (iii != i && jjj != j) {
+					if (iii != i && jjj != j /*&& arr[iii][jjj].getVecLen() > 1*/) {
 						arr[iii][jjj].deletePossibleVal(arr[i][j].getValue());
 					}
 				}
