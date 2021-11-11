@@ -1,5 +1,4 @@
-﻿  main.cpp
-D:\code\sudoku\sudoku\sudoku\main.cpp(13,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\code\sudoku\sudoku\sudoku\main.cpp(20,6): warning C4101: prev_j: неиспользованная локальная переменная
-D:\code\sudoku\sudoku\sudoku\main.cpp(19,6): warning C4101: prev_i: неиспользованная локальная переменная
+﻿  Square.cpp
+D:\code\sudoku\sudoku\sudoku\Square.cpp(6,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\code\sudoku\sudoku\sudoku\Square.cpp(15,20): warning C4018: <: несоответствие типов со знаком и без знака
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe

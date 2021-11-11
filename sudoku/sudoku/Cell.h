@@ -15,7 +15,7 @@ private:
 	int findMaxSquareCoords();
 	void setRow(int row) { m_row = row; };
 	void setCol(int col) { m_col = col; };
-	bool isSameSquare(int r, int c);	
+		
 	void setSquare();
 
 public:
@@ -27,5 +27,5 @@ public:
 	int getMaxRow() { return m_max_row; };
 	int getMaxCol() { return m_max_col; };
 	int getSq() { return m_sq; };
-	
+	bool isSameSquare(int r, int c);
 };

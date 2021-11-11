@@ -20,16 +20,25 @@ int Cell::setValue()
 	int ind = rand() % m_possibleVals.size(); // в диапазоне длины вектора (которая уменьшается)
 	m_value = m_possibleVals[ind];	
 	//std::cout << "set value = " << m_value << " with random index = " << ind << "\n";
-
+	m_possibleVals.clear();
+	m_possibleVals = { m_value };
 	return ind; // index to delete for other cells
 }
 
 // что за индекс?
 int Cell::deletePossibleVal(int val)
 {
-	std::vector<int>::iterator it = std::find(m_possibleVals.begin(), m_possibleVals.end(), val);
-	if (it != m_possibleVals.end())
-		m_possibleVals.erase(it);
+	if (m_possibleVals.size() < 1)
+		return -1;
+
+	for (int i = 0; i < m_possibleVals.size(); i++)
+	{
+		if (m_possibleVals[i] == val)
+		{
+			m_possibleVals.erase(m_possibleVals.begin() + i);
+			break;
+		}
+	}
 
 	//std::cout << "vector size = " << m_possibleVals.size() << "\n";
 	//std::cout << "i = " << m_row << " j = " << m_col << "\n";
@@ -44,22 +53,13 @@ int Cell::deletePossibleVal(int val)
 int Cell::findMaxSquareCoords()
 {
 	// i
-	if (this->isSameSquare(m_row - 2, m_col))
-		m_max_row = m_row;
-	else if (this->isSameSquare(m_row + 2, m_col))
-		m_max_row = m_row + 2;
-	else
-		m_max_row = m_row + 1;
+	m_max_row = m_row + 2 - m_row % 3;
 
 	// j
-	if (this->isSameSquare(m_row, m_col - 2))
-		m_max_col = m_col;
-	else if (this->isSameSquare(m_row, m_col + 2))
-		m_max_col = m_col + 2;
-	else
-		m_max_col = m_col + 1;
+	m_max_col = m_col + 2 - m_col % 3;
 
-
+	//std::cout << "i = " << m_row << " i_max = " << m_max_row << "\n";
+	//std::cout << "j = " << m_col << " j_max = " << m_max_col << "\n";
 
 	return 0;
 }
@@ -110,7 +110,6 @@ bool Cell::init(int i, int j)
 
 	setRow(i);
 	setCol(j);	
-	//setSquare();
 
 	findMaxSquareCoords();
 	
