@@ -22,7 +22,8 @@ public:
 	int getValue() { return m_value; };
 	int deletePossibleVal(int val);
 	bool init(int i, int j);
-	int setValue(); // sets random value
+	int setRandomValue(); // sets random value
+	int setValue(int val) { m_value = val; };
 	int getVecLen() { return m_possibleVals.size(); }
 	int getMaxRow() { return m_max_row; };
 	int getMaxCol() { return m_max_col; };

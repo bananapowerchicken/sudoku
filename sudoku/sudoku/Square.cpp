@@ -28,6 +28,7 @@ void Square::init(int id)
 {
 	m_id = id;
 
+	// should more clear for understanding
 	int Z = id / 3; // whole part of division
 	int R = id % 3; // remainder of the division
 
@@ -57,4 +58,17 @@ void Square::init(int id)
 		m_j_possible = { 6, 7, 8 };
 		break;
 	}
+}
+
+int Square::setVal(int val) 
+{
+	int i_ind = rand() % m_i_possible.size();
+	int i = m_i_possible[i_ind];
+
+	int j_ind = rand() % m_j_possible.size();
+	int j = m_j_possible[j_ind];
+
+	if (editPossibles(i, j))
+		return -1; // cannot delete possible elements
+
 }

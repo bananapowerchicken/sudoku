@@ -15,4 +15,5 @@ public:
 	std::vector<int> getPossibleRows() { return m_i_possible; };
 	std::vector<int> getPossibleCols() { return m_j_possible; };
 	void init(int id);
+	int setVal(int val); // with randomized [i, j]
 };

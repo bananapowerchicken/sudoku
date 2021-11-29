@@ -15,7 +15,7 @@ bool Cell::isSameSquare(int row, int col)
 }
 
 // rand() % (b - a + 1) + a
-int Cell::setValue()
+int Cell::setRandomValue()
 {
 	int ind = rand() % m_possibleVals.size(); // в диапазоне длины вектора (которая уменьшается)
 	m_value = m_possibleVals[ind];	
@@ -115,3 +115,4 @@ bool Cell::init(int i, int j)
 	
 	return true;
 }
+

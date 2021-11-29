@@ -1,4 +1,2 @@
-﻿  Square.cpp
-D:\code\sudoku\sudoku\sudoku\Square.cpp(6,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\code\sudoku\sudoku\sudoku\Square.cpp(15,20): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  main.cpp
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe
