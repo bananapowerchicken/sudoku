@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Cell.h"
 #include "Square.h"
+#include "Grid.h"
 #include <time.h>
 #include <algorithm>
 #include <vector>
@@ -8,46 +9,19 @@
 int main()
 {
 	//srand(time(NULL));// for truly randomizing
-	Square sq[9];
-	for (int i = 0; i < 9; i++)
+	int arr[5] = { 1, 2, 3, 4, 5 };
+	for (int i = 0; i < 5; i++)
 	{
-		sq[i].init(i);
+		std::cout << arr[i] << " ";
 	}
+	std::cout << "\n";
 
-	Cell arr[9][9];	
-	
-	for (int i = 0; i < 9; i++)
+	shiftRightArray(arr, 5, 6);
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 9; j++)
-		{
-			arr[i][j].init(i, j);
-		}			
+		std::cout << arr[i] << " ";
 	}
-
-	for (int i = 0; i < 9; i++)
-	{
-		for (int j = 0; j < 9; j++)
-		{
-			for (int k = 0; k < 9; k++) // go throw row - need row without repeats
-			{				
-					arr[i][j].deletePossibleVal(arr[i][k].getValue());					
-				
-			}
-			arr[i][j].setRandomValue();	
-			std::cout << arr[i][j].getValue() << " ";
-		}
-		std::cout << "\n";
-	}
-	
-	//for (int i = 0; i < 9; i++)
-	//{
-	//	for (int j = 0; j < 9; j++)
-	//	{
-	//		std::cout << arr[i][j].getValue() << " ";
-	//	}
-	//	std::cout << "\n";
-	//}
-	
+	std::cout << "\n";
 
 	return 0;
 }
