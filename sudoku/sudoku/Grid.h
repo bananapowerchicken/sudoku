@@ -1,6 +1,6 @@
 #pragma once
 
-void shiftArray(int* arr, int size, int shift);
+void shiftRightArray(int* arr, int size, int shift);
 
 class Grid
 {

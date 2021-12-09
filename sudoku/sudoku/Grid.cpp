@@ -1,6 +1,6 @@
 #include "Grid.h"
 
-void shiftArray(int *arr, int size, int shift)
+void shiftRightArray(int *arr, int size, int shift)
 {
 	if (shift >= size) shift = shift % size;
 
