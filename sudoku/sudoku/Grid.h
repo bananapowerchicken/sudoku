@@ -10,6 +10,8 @@ private:
 	// for every instance of this class - it is needed to compilate
 	int m_cells_arr[m_rows][m_cols];
 public:
+	// creates the base matrix with required start shifts
+	// what should be the input? or nothing in, but the grid must be out
 	void init();
 };
 
