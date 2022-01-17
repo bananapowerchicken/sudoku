@@ -69,11 +69,11 @@ int main()
 		for (int j = 0; j < 9; j++)
 		{
 			grid[i][j] = j + 1;
-			std::cout << grid[i][j] << " ";
+			//std::cout << grid[i][j] << " ";
 		}
-		std::cout << "\n";
+		//std::cout << "\n";
 	}
-	std::cout << "\n";	
+	//std::cout << "\n";	
 	 
 	shiftRightArray(grid[1], 9, 3);
 	shiftRightArray(grid[2], 9, 6);
@@ -84,13 +84,14 @@ int main()
 	shiftRightArray(grid[7], 9, 1);
 	shiftRightArray(grid[8], 9, 4);
 	
+	std::cout << "Base matrix, start matrix:\n";
 	show2dArray(grid[0], 9, 9);
 
 	/*swapRows(grid[0], grid[3], 0, 3);
 	show2dArray(grid[0], 9, 9);*/
 
-	swapCols(grid[0] + 1, grid[3] + 2, 1, 2); // 1 and 2 cols should be swapped here
-	show2dArray(grid[0], 9, 9);
+	//swapCols(grid[0] + 1, grid[3] + 2, 1, 2); // 1 and 2 cols should be swapped here
+	//show2dArray(grid[0], 9, 9);
 
 	return 0;
 }
