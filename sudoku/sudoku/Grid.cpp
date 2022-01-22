@@ -1,21 +1,21 @@
 #include "Grid.h"
 #include <iostream>
 
-void shiftRightArray(int *arr, int size, int shift)
+void Grid::m_rightShiftRow(int row_index, int shift)
 {
-	if (shift >= size) shift = shift % size;
+	int row_len = m_cols;
+	if (shift >= row_len) shift = shift % row_len;
 
 	int tmp;
 	for (int j = 0; j < shift; j++)
 	{
-		for (int i = 0; i < size; i++)
-			{
-				tmp = *arr;
-				*arr = *(arr + i);
-				*(arr + i) = tmp;
-			}
+		for (int i = 0; i < row_len; i++)
+		{
+			tmp = *m_matrix[row_index];
+			*m_matrix[row_index] = *(m_matrix[row_index] + i);
+			*(m_matrix[row_index] + i) = tmp;
+		}
 	}
-	
 }
 
 void Grid::init()
@@ -29,14 +29,14 @@ void Grid::init()
 		
 	}	
 
-	shiftRightArray(m_matrix[1], 9, 3);
-	shiftRightArray(m_matrix[2], 9, 6);
-	shiftRightArray(m_matrix[3], 9, 8);
-	shiftRightArray(m_matrix[4], 9, 2);
-	shiftRightArray(m_matrix[5], 9, 5);
-	shiftRightArray(m_matrix[6], 9, 7);
-	shiftRightArray(m_matrix[7], 9, 1);
-	shiftRightArray(m_matrix[8], 9, 4);
+	m_rightShiftRow(1, 3);
+	m_rightShiftRow(2, 6);
+	m_rightShiftRow(3, 8);
+	m_rightShiftRow(4, 2);
+	m_rightShiftRow(5, 5);
+	m_rightShiftRow(6, 7);
+	m_rightShiftRow(7, 1);
+	m_rightShiftRow(8, 4);
 }
 
 void Grid::show()

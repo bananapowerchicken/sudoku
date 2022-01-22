@@ -11,6 +11,7 @@ private:
 	int m_matrix[m_rows][m_cols];
 
 	// all shifts - matrix metamorphoses
+	void m_rightShiftRow(int row_index, int shift);
 
 public:
 	// creates the base matrix with required start shifts
