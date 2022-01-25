@@ -18,5 +18,6 @@ public:
 	// what should be the input? or nothing in, but the grid must be out
 	void init();
 	void show();
+	void transpose();
 };
 

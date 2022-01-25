@@ -49,4 +49,26 @@ void Grid::show()
 		}
 		std::cout << "\n";
 	}
+	std::cout << "\n";
+}
+
+void Grid::transpose()
+{
+	int new_matrix[m_cols][m_rows];
+	for (int i = 0; i < m_cols; i++)
+	{
+		for (int j = 0; j < m_rows; j++)
+		{
+			new_matrix[i][j] = m_matrix[j][i];			
+		}		
+	}
+
+	// no need to swap rows and cols since they are equal
+	for (int i = 0; i < m_rows; i++)
+	{
+		for (int j = 0; j < m_cols; j++)
+		{
+			m_matrix[i][j] = new_matrix[i][j];
+		}
+	}
 }

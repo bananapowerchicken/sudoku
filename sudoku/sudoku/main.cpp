@@ -54,6 +54,9 @@ int main()
 	grid.init();
 	grid.show();
 
+	grid.transpose();
+	grid.show();
+
 
 	return 0;
 }
