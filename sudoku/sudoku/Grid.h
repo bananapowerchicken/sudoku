@@ -19,5 +19,7 @@ public:
 	void init();
 	void show();
 	void transpose();
+	void swapRowsSmall(int row1, int row2);
+	void swapColsSmall(int col1, int col2);
 };
 

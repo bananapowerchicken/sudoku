@@ -72,3 +72,35 @@ void Grid::transpose()
 		}
 	}
 }
+
+void Grid::swapRowsSmall(int row1, int row2)
+{
+	if (row1 / 3 != row2 / 3) {
+		std::cout << "Error. Chosen rows are from different districts.\n";
+	}
+	else {
+		int tmp;
+		for (int i = 0; i < m_cols; i++)
+		{
+			tmp = m_matrix[row1][i];
+			m_matrix[row1][i] = m_matrix[row2][i];
+			m_matrix[row2][i] = tmp;
+		}
+	}
+}
+
+void Grid::swapColsSmall(int col1, int col2)
+{
+	if (col1 / 3 != col2 / 3) {
+		std::cout << "Error. Chosen cols are from different districts.\n";
+	}
+	else {
+		int tmp;
+		for (int i = 0; i < m_rows; i++)
+		{
+			tmp = m_matrix[i][col1];
+			m_matrix[i][col1] = m_matrix[i][col2];
+			m_matrix[i][col2] = tmp;
+		}
+	}
+}
