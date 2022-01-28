@@ -22,5 +22,8 @@ int main()
 	grid.swapColsSmall(4, 3);
 	grid.show();
 
+	grid.swapColsBig(2, 1);
+	grid.show();
+
 	return 0;
 }

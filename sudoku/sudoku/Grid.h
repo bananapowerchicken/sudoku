@@ -12,6 +12,8 @@ private:
 
 	// all shifts - matrix metamorphoses
 	void m_rightShiftRow(int row_index, int shift);
+	void swapAnyRows(int row1, int row2);
+	void swapAnyCols(int col1, int col2);
 
 public:
 	// creates the base matrix with required start shifts
@@ -21,5 +23,7 @@ public:
 	void transpose();
 	void swapRowsSmall(int row1, int row2);
 	void swapColsSmall(int col1, int col2);
+	void swapRowsBig(int district1, int disctrict2);
+	void swapColsBig(int district1, int disctrict2);
 };
 

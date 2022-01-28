@@ -18,6 +18,28 @@ void Grid::m_rightShiftRow(int row_index, int shift)
 	}
 }
 
+void Grid::swapAnyRows(int row1, int row2)
+{
+	int tmp;
+	for (int i = 0; i < m_cols; i++)
+	{
+		tmp = m_matrix[row1][i];
+		m_matrix[row1][i] = m_matrix[row2][i];
+		m_matrix[row2][i] = tmp;
+	}
+}
+
+void Grid::swapAnyCols(int col1, int col2)
+{
+	int tmp;
+	for (int i = 0; i < m_rows; i++)
+	{
+		tmp = m_matrix[i][col1];
+		m_matrix[i][col1] = m_matrix[i][col2];
+		m_matrix[i][col2] = tmp;
+	}
+}
+
 void Grid::init()
 {
 	for (int i = 0; i < m_rows; i++)
@@ -79,13 +101,7 @@ void Grid::swapRowsSmall(int row1, int row2)
 		std::cout << "Error. Chosen rows are from different districts.\n";
 	}
 	else {
-		int tmp;
-		for (int i = 0; i < m_cols; i++)
-		{
-			tmp = m_matrix[row1][i];
-			m_matrix[row1][i] = m_matrix[row2][i];
-			m_matrix[row2][i] = tmp;
-		}
+		swapAnyRows(row1, row2);
 	}
 }
 
@@ -95,12 +111,24 @@ void Grid::swapColsSmall(int col1, int col2)
 		std::cout << "Error. Chosen cols are from different districts.\n";
 	}
 	else {
-		int tmp;
-		for (int i = 0; i < m_rows; i++)
-		{
-			tmp = m_matrix[i][col1];
-			m_matrix[i][col1] = m_matrix[i][col2];
-			m_matrix[i][col2] = tmp;
-		}
+		swapAnyCols(col1, col2);
+	}
+}
+
+void Grid::swapRowsBig(int d1, int d2)
+{
+	// 3 would not be hardcoded better, but i'm too lazy now
+	for (int i = 0; i < 3; i++)
+	{
+		swapAnyRows(d1 * 3 + i, d2 * 3 + i);
+	}
+}
+
+void Grid::swapColsBig(int d1, int d2)
+{
+	// 3 would not be hardcoded better, but i'm too lazy now
+	for (int i = 0; i < 3; i++)
+	{
+		swapAnyCols(d1 * 3 + i, d2 * 3 + i);
 	}
 }
