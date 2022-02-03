@@ -1,5 +1,6 @@
 #include "Grid.h"
 #include <iostream>
+#include <time.h>
 
 void Grid::m_rightShiftRow(int row_index, int shift)
 {
@@ -113,6 +114,34 @@ void Grid::swapColsSmall(int col1, int col2)
 	else {
 		swapAnyCols(col1, col2);
 	}
+}
+
+void Grid::swapRowsSmallRandom()
+{
+	// по идее тут надо выбирать райончик, но тогда
+	// но тогда теряется фикс-идея случайности, если 
+	// район делать аргументом - бу - надо подумать
+
+	// и этот дубль код лучше вынести тоже в отдельную ф-ю
+	srand(time(NULL));// for truly randomizing
+	int districtRandom = rand() % 3 + 0;
+	int row1Random = (rand() % 3 + 0) + districtRandom * 3;
+	int row2Random = (rand() % 3 + 0) + districtRandom * 3;
+	std::cout << districtRandom << " "<< row1Random << " " << row2Random << "\n";
+	swapRowsSmall(row1Random, row2Random);
+}
+
+void Grid::swapColsSmallRandom()
+{
+	// по идее тут надо выбирать райончик, но тогда
+	// но тогда теряется фикс-идея случайности, если 
+	// район делать аргументом - бу - надо подумать
+	srand(time(NULL));// for truly randomizing
+	int districtRandom = rand() % 3 + 0;
+	int col1Random = (rand() % 3 + 0) + districtRandom * 3;
+	int col2Random = (rand() % 3 + 0) + districtRandom * 3;
+	std::cout << districtRandom << " " << col1Random << " " << col2Random << "\n";
+	swapColsSmall(col1Random, col2Random);
 }
 
 void Grid::swapRowsBig(int d1, int d2)

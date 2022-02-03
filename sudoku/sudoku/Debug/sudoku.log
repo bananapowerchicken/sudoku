@@ -1,4 +1,4 @@
 ﻿  Grid.cpp
-  main.cpp
-  Создание кода...
+D:\code\sudoku\sudoku\sudoku\Grid.cpp(126,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\code\sudoku\sudoku\sudoku\Grid.cpp(139,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe

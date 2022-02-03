@@ -23,6 +23,8 @@ public:
 	void transpose();
 	void swapRowsSmall(int row1, int row2);
 	void swapColsSmall(int col1, int col2);
+	void swapRowsSmallRandom();
+	void swapColsSmallRandom();
 	void swapRowsBig(int district1, int disctrict2);
 	void swapColsBig(int district1, int disctrict2);
 };
