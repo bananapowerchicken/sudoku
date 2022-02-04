@@ -161,3 +161,19 @@ void Grid::swapColsBig(int d1, int d2)
 		swapAnyCols(d1 * 3 + i, d2 * 3 + i);
 	}
 }
+
+void Grid::swapRowsBigRandom()
+{
+	int district1Random = rand() % 3 + 0;
+	int district2Random = rand() % 3 + 0;
+	std::cout << district1Random << " " << district2Random << "\n";
+	swapRowsBig(district1Random, district2Random);
+}
+
+void Grid::swapColsBigRandom()
+{
+	int district1Random = rand() % 3 + 0;
+	int district2Random = rand() % 3 + 0;
+	std::cout << district1Random << " " << district2Random << "\n";
+	swapColsBig(district1Random, district2Random);
+}

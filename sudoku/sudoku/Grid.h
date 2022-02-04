@@ -18,7 +18,7 @@ private:
 public:
 	// creates the base matrix with required start shifts
 	// what should be the input? or nothing in, but the grid must be out
-	void init();
+	void init(); // change to constructor!
 	void show();
 	void transpose();
 	void swapRowsSmall(int row1, int row2);
@@ -27,5 +27,7 @@ public:
 	void swapColsSmallRandom();
 	void swapRowsBig(int district1, int disctrict2);
 	void swapColsBig(int district1, int disctrict2);
+	void swapRowsBigRandom();
+	void swapColsBigRandom();
 };
 

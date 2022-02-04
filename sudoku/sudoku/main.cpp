@@ -13,10 +13,12 @@ int main()
 	Grid grid;
 	grid.init();
 	grid.show();
-	grid.swapRowsSmallRandom();
+	grid.swapColsBigRandom();
 	grid.show();
-	grid.swapColsSmallRandom();
-	grid.show();
+	//grid.swapRowsSmallRandom();
+	//grid.show();
+	//grid.swapColsSmallRandom();
+	//grid.show();
 
 	/*grid.transpose();
 	grid.show();*/
