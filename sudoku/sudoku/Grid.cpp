@@ -1,5 +1,6 @@
 #include "Grid.h"
 #include <iostream>
+#include <vector>
 #include <time.h>
 
 void Grid::m_rightShiftRow(int row_index, int shift)
@@ -176,4 +177,41 @@ void Grid::swapColsBigRandom()
 	int district2Random = rand() % 3 + 0;
 	std::cout << district1Random << " " << district2Random << "\n";
 	swapColsBig(district1Random, district2Random);
+}
+
+void Grid::shakeGrid(int n)
+{
+	std::vector <int> swapVars(n);
+	for (int i = 0; i < n; i++)
+	{
+		swapVars[i] = rand() % 5 + 0;
+		std::cout << swapVars[i] << "\n";
+
+		switch (swapVars[i])
+		{
+		case 0:
+			this->transpose();
+			this->show();
+			break;
+		case 1:
+			this->swapRowsSmallRandom();
+			this->show();
+			break;
+		case 2:
+			this->swapColsSmallRandom();
+			this->show();
+			break;
+		case 3:
+			this->swapRowsBigRandom();
+			this->show();
+			break;
+		case 4:
+			this->swapColsBigRandom();
+			this->show();
+			break;
+		}
+	}
+	std::cout << "\n";
+
+	
 }

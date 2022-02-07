@@ -29,5 +29,6 @@ public:
 	void swapColsBig(int district1, int disctrict2);
 	void swapRowsBigRandom();
 	void swapColsBigRandom();
+	void shakeGrid(int n);
 };
 
