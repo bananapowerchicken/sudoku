@@ -181,11 +181,17 @@ void Grid::swapColsBigRandom()
 
 void Grid::shakeGrid(int n)
 {
+	if (n < 0)
+	{
+		std::cout << "nothing is done since n must be >= 0\n";
+		return;
+	}
+		
 	std::vector <int> swapVars(n);
 	for (int i = 0; i < n; i++)
 	{
 		swapVars[i] = rand() % 5 + 0;
-		std::cout << swapVars[i] << "\n";
+		std::cout << "swap num = " << swapVars[i] << "\n";
 
 		switch (swapVars[i])
 		{

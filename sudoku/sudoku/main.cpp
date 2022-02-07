@@ -13,7 +13,7 @@ int main()
 	Grid grid;
 	grid.init();
 	grid.show();
-	grid.shakeGrid(5);
+	grid.shakeGrid(1);
 
 	return 0;
 }
