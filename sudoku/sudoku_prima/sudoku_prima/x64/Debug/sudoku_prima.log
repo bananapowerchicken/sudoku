@@ -1,8 +1,3 @@
-﻿  Grid.cpp
-  main.cpp
+﻿  Solver.cpp
 D:\sudoku\sudoku\sudoku\Cell.h(27,18): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-D:\sudoku\sudoku\sudoku\main.cpp(11,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Solver.cpp
-D:\sudoku\sudoku\sudoku\Cell.h(27,18): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-  Создание кода...
-  sudoku_prima.vcxproj -> D:\sudoku\sudoku\sudoku_prima\x64\Debug\sudoku_prima.exe
+D:\sudoku\sudoku\sudoku\Cell.h(26): error C4716: Cell::setValue: должна возвращать значение
