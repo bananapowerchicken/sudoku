@@ -6,4 +6,4 @@ $ cat .gitignore
 *.vcxproj.user
 *.vs
 sudoku/Debug
-sudoku/sudoku_prima
+sudoku/sudoku/sudoku_prima
