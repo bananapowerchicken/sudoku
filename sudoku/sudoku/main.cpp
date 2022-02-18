@@ -14,6 +14,7 @@ int main()
 	Grid grid;
 	grid.show();
 	//grid.shakeGrid(1);
+
 	Solver solver;
 	solver.solve(&grid);
 	solver.showCurrentMatrix();
