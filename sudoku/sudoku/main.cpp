@@ -11,7 +11,7 @@ int main()
 	srand(time(NULL));// for truly randomizing
 
 	Grid grid;
-	grid.init();
+	//grid.init();
 	grid.show();
 	grid.shakeGrid(1);
 

@@ -18,6 +18,7 @@ private:
 public:
 	// creates the base matrix with required start shifts
 	// what should be the input? or nothing in, but the grid must be out
+	Grid();
 	void init(); // change to constructor!
 	void show();
 	void transpose();
