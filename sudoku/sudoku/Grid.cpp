@@ -221,3 +221,26 @@ void Grid::shakeGrid(int n)
 
 	
 }
+
+void Grid::getMatrix(int** matrix)
+{
+	// need to copy m_matrix to matrix
+}
+
+int Grid::getElement(int row, int col)
+{
+	// don't like this check and magic numbers
+	// TODO: need more elegance
+	if (row >= 0 && col >= 0 && row < 9 && col < 9)
+	{
+		int element = m_matrix[row][col];
+		return element;
+	}
+	else 
+	{
+		// TODO: system exit?
+		std::cout << "row or col is out of range\n"; 
+		return -1;
+	}
+
+}
