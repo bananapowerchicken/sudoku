@@ -22,6 +22,14 @@ Grid::Grid()
 	m_rightShiftRow(6, 7);
 	m_rightShiftRow(7, 4);
 	m_rightShiftRow(8, 1);
+
+	// debug - artificial fixed putting zeros in some positions
+	m_matrix[0][0] = 0;
+	m_matrix[2][1] = 0;
+	m_matrix[2][2] = 0;
+	m_matrix[7][3] = 0;
+	m_matrix[7][4] = 0;
+	m_matrix[7][5] = 0;
 }
 
 void Grid::m_rightShiftRow(int row_index, int shift)

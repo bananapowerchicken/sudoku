@@ -11,11 +11,11 @@ private:
 	// for every instance of this class - it is needed to compilate
 	int m_matrix[m_rows][m_cols];
 	std::vector <Cell> emptyCellsVector;
-	void getEmptyCells(Grid* grid);
+	
 	void fillMatrix(Grid* grid);
 
 public:
 	void solve(Grid* grid);
 	void showCurrentMatrix();
-	
+	void getEmptyCells(Grid* grid);
 };

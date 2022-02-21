@@ -18,6 +18,7 @@ int main()
 	Solver solver;
 	solver.solve(&grid);
 	solver.showCurrentMatrix();
+	solver.getEmptyCells(&grid);
 
 	return 0;
 }
