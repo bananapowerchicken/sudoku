@@ -11,15 +11,10 @@ void Solver::getEmptyCells(Grid* grid)
 			{
 				std::cout << "Empty cell:[" << i << "][" << j << "]\n";
 				// here should fill my empty vector with empty cells
-				Cell cell;
+				Cell cell(i, j);
 				cell.setValue(m_matrix[i][j]);
 				emptyCellsVector.push_back(cell);
-			}
-			//else
-			//{
-			//	std::cout << "No empty cells, sudoku is solved :)\n";
-			//	return;
-			//}
+			}		
 		}		
 	}
 	std::cout << "Total empty cells: " << emptyCellsVector.size() << "\n";
@@ -53,4 +48,30 @@ void Solver::fillMatrix(Grid* grid)
 void Solver::solve(Grid* grid)
 {
 	fillMatrix(grid);
+}
+
+void Solver::calculatePossibleValues()
+{
+	//for (int i = 0; i < emptyCellsVector.size(); i++)
+	//{
+		setPossibleValuesForCell(1, 0);
+		emptyCellsVector.at(0).showPossibleVals();
+	//}
+}
+
+void Solver::setPossibleValuesForCell(int row, int col)
+{			
+		int k; // counter
+		// check realted row
+		for (k = 0; k < 9; ++k)
+		{
+			if (k != col)
+			{
+				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]);
+			}
+		}		
+
+		// check related col
+
+		// check related square	
 }

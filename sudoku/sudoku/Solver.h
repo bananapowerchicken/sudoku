@@ -18,4 +18,6 @@ public:
 	void solve(Grid* grid);
 	void showCurrentMatrix();
 	void getEmptyCells(Grid* grid);
+	void calculatePossibleValues();
+	void setPossibleValuesForCell(int row, int col);
 };

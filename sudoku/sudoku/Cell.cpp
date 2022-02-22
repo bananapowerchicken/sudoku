@@ -1,5 +1,4 @@
-//#include "Cell.h"
-//#include <iostream>
+#include "Cell.h"
 //#include <time.h>
 //
 //// неполное покрытие
@@ -26,19 +25,19 @@
 //}
 //
 //// что за индекс?
-//int Cell::deletePossibleVal(int val)
-//{
-//	if (m_possibleVals.size() < 1)
-//		return -1;
-//
-//	for (int i = 0; i < m_possibleVals.size(); i++)
-//	{
-//		if (m_possibleVals[i] == val)
-//		{
-//			m_possibleVals.erase(m_possibleVals.begin() + i);
-//			break;
-//		}
-//	}
+int Cell::deletePossibleVal(int val)
+{
+	if (m_possibleVals.size() < 1)
+		return -1;
+
+	for (int i = 0; i < m_possibleVals.size(); i++)
+	{
+		if (m_possibleVals[i] == val)
+		{
+			m_possibleVals.erase(m_possibleVals.begin() + i);
+			break;
+		}
+	}
 //
 //	//std::cout << "vector size = " << m_possibleVals.size() << "\n";
 //	//std::cout << "i = " << m_row << " j = " << m_col << "\n";
@@ -47,8 +46,35 @@
 //	//	std::cout << ' ' << m_possibleVals[i];
 //	//std::cout << '\n';
 //
-//	return 0;
+	return 0;
+}
+
+void Cell::showPossibleVals()
+{
+	std::cout << "vector size = " << m_possibleVals.size() << "\n";
+	std::cout << "possible values:";
+	for (unsigned i = 0; i < m_possibleVals.size(); ++i)
+		std::cout << ' ' << m_possibleVals[i];
+	std::cout << '\n';
+}
+
+//void Cell::setPossibleVals()
+//{
+//	int k; // counter
+//	// check realted row
+//	for (k = 0; k < 9; ++k)
+//	{
+//		if (k != m_row)
+//		{
+//
+//		}
+//	}
+//
+//	// check related col
+//
+//	// check related square
 //}
+
 //
 //int Cell::findMaxSquareCoords()
 //{

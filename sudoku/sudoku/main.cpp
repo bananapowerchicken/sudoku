@@ -19,6 +19,7 @@ int main()
 	solver.solve(&grid);
 	solver.showCurrentMatrix();
 	solver.getEmptyCells(&grid);
+	solver.calculatePossibleValues();
 
 	return 0;
 }
