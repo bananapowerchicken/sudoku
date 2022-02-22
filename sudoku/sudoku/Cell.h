@@ -24,7 +24,9 @@ public:
 	//int getValue() { return m_value; };
 	void showPossibleVals();
 	int deletePossibleVal(int val);
-	void setValue(int val) { m_value = val; };
+	void setValue(int val, int i, int j) { m_value = val; m_row = i; m_col = j; };
+	int getRow() { return m_row; };
+	int getCol() { return m_col; };
 	//void setPossibleVals(); // many deletions
 	//bool init(int i, int j);
 	//int setRandomValue(); // sets random value	

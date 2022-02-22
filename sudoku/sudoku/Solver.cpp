@@ -12,7 +12,7 @@ void Solver::getEmptyCells(Grid* grid)
 				std::cout << "Empty cell:[" << i << "][" << j << "]\n";
 				// here should fill my empty vector with empty cells
 				Cell cell(i, j);
-				cell.setValue(m_matrix[i][j]);
+				cell.setValue(m_matrix[i][j], i, j);
 				emptyCellsVector.push_back(cell);
 			}		
 		}		
@@ -52,21 +52,22 @@ void Solver::solve(Grid* grid)
 
 void Solver::calculatePossibleValues()
 {
-	//for (int i = 0; i < emptyCellsVector.size(); i++)
-	//{
-		setPossibleValuesForCell(1, 0);
-		emptyCellsVector.at(0).showPossibleVals();
-	//}
+	for (int i = 0; i < emptyCellsVector.size(); i++)
+	{
+		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
+		emptyCellsVector.at(i).showPossibleVals();
+	}
 }
 
 void Solver::setPossibleValuesForCell(int row, int col)
 {			
 		int k; // counter
-		// check realted row
+		// check related row
 		for (k = 0; k < 9; ++k)
 		{
-			if (k != col)
+			if (k != col && m_matrix[row][k] != 0 )
 			{
+				std::cout << m_matrix[row][k] << "\n";
 				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]);
 			}
 		}		
