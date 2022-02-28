@@ -1,2 +1,3 @@
-﻿  Grid.cpp
+﻿  Solver.cpp
+D:\sudoku\sudoku\sudoku\Cell.h(30,29): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
   sudoku_prima.vcxproj -> D:\sudoku\sudoku\sudoku_prima\x64\Debug\sudoku_prima.exe

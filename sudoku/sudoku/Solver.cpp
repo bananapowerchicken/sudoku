@@ -82,13 +82,23 @@ void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 
 void Solver::fillEmptyCells()
 {
-	for (int i = 0; i < emptyCellsVector.size(); i++)
+	if (!emptyCellsVector.size())
 	{
-		// если тут одно возможное значение для этой клетки - то его и поставить
-		// но тут получается, нужен доступ к вектору, точнее, к его размеру и к нему самому
-		if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
-		{
-			std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
-		}
+		std::cout << "Sudoku is solved! :)\n";
 	}
+	else 
+	{
+		for (int i = 0; i < emptyCellsVector.size(); i++)
+		{
+			// если тут одно возможное значение для этой клетки - то его и поставить
+			// но тут получается, нужен доступ к вектору, точнее, к его размеру и к нему самому
+			if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
+			{				
+				std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
+			// здесь еще надо заполнить матрицу				
+				emptyCellsVector.erase(emptyCellsVector.begin());
+			}			
+		}
+		fillEmptyCells(); // recursion
+	}	
 }
