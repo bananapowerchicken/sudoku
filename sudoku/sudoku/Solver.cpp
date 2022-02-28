@@ -54,21 +54,24 @@ void Solver::calculatePossibleValues()
 {
 	for (int i = 0; i < emptyCellsVector.size(); i++)
 	{
-		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
+		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol(), i);
+		std::cout << "num vector: " << i << "\n";
 		emptyCellsVector.at(i).showPossibleVals();
 	}
 }
 
-void Solver::setPossibleValuesForCell(int row, int col)
+void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 {			
 		int k; // counter
 		// check related row
+		std::cout << "cell: " << m_matrix[row][col] << "[" << row << "][" << col << "]\n";
 		for (k = 0; k < 9; ++k)
 		{
 			if (k != col && m_matrix[row][k] != 0 )
 			{
-				std::cout << m_matrix[row][k] << "\n";
-				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]);
+				std::cout << "to delete:" <<  m_matrix[row][k] << "\n";
+				emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[row][k]);
+				emptyCellsVector.at(cell_index).showPossibleVals();
 			}
 		}		
 

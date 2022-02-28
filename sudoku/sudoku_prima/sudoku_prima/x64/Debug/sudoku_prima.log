@@ -1,2 +1,5 @@
 ﻿  Solver.cpp
+  main.cpp
+D:\sudoku\sudoku\sudoku\main.cpp(12,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
   sudoku_prima.vcxproj -> D:\sudoku\sudoku\sudoku_prima\x64\Debug\sudoku_prima.exe

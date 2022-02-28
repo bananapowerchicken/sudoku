@@ -19,5 +19,5 @@ public:
 	void showCurrentMatrix();
 	void getEmptyCells(Grid* grid);
 	void calculatePossibleValues();
-	void setPossibleValuesForCell(int row, int col);
+	void setPossibleValuesForCell(int row, int col, int cell_index);
 };
