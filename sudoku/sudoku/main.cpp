@@ -20,6 +20,7 @@ int main()
 	solver.showCurrentMatrix();
 	solver.getEmptyCells(&grid);
 	solver.calculatePossibleValues();
+	solver.fillEmptyCells();
 
 	return 0;
 }

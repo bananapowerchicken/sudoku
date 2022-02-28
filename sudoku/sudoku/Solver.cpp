@@ -79,3 +79,16 @@ void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 
 		// check related square	
 }
+
+void Solver::fillEmptyCells()
+{
+	for (int i = 0; i < emptyCellsVector.size(); i++)
+	{
+		// если тут одно возможное значение для этой клетки - то его и поставить
+		// но тут получается, нужен доступ к вектору, точнее, к его размеру и к нему самому
+		if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
+		{
+			std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
+		}
+	}
+}
