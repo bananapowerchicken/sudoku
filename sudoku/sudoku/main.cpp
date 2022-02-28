@@ -21,6 +21,7 @@ int main()
 	solver.getEmptyCells(&grid);
 	solver.calculatePossibleValues();
 	solver.fillEmptyCells();
+	solver.showCurrentMatrix();
 
 	return 0;
 }

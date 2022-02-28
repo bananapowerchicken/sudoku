@@ -93,12 +93,30 @@ void Solver::fillEmptyCells()
 			// если тут одно возможное значение для этой клетки - то его и поставить
 			// но тут получается, нужен доступ к вектору, точнее, к его размеру и к нему самому
 			if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
-			{				
+			{		
+				std::cout << "Cell [" << emptyCellsVector.at(i).getRow() << "][" << emptyCellsVector.at(i).getCol() << "]\n";
 				std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
-			// здесь еще надо заполнить матрицу				
-				emptyCellsVector.erase(emptyCellsVector.begin());
+			// здесь еще надо заполнить матрицу	в нужном месте		
+				m_matrix[emptyCellsVector.at(i).getRow()][emptyCellsVector.at(i).getCol()] = emptyCellsVector.at(i).getPossibleValElement(0);
+				emptyCellsVector.at(i).setValue(emptyCellsVector.at(i).getPossibleValElement(0), emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
+				// надо хорошенько продумать удаление, а то индекс соскальзывает и чтобы избежать рекурсии притом
 			}			
 		}
-		fillEmptyCells(); // recursion
+		std::vector <Cell>::iterator iter = emptyCellsVector.begin();
+		std::vector <Cell>::iterator const_end_iter = emptyCellsVector.end();
+		std::vector <Cell> new_emptyCellsVector; // shorter
+		while (iter != const_end_iter) // тут разные копии вектора
+		{
+			if ((*iter).getNumOfPossibleVals() == 1)
+			{
+				emptyCellsVector.erase(iter);
+				// здесь итератор автоматически меняется на 1-ый элемент вектора, но почему-то дропается при сравнении в while
+			}
+			else
+			{
+				iter++;
+			}
+		}
+		
 	}	
 }
