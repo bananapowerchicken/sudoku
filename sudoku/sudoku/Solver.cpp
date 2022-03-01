@@ -90,33 +90,32 @@ void Solver::fillEmptyCells()
 	{
 		for (int i = 0; i < emptyCellsVector.size(); i++)
 		{
-			// если тут одно возможное значение для этой клетки - то его и поставить
-			// но тут получается, нужен доступ к вектору, точнее, к его размеру и к нему самому
+			// если тут одно возможное значение для этой клетки - то его и поставить	
 			if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
 			{		
 				std::cout << "Cell [" << emptyCellsVector.at(i).getRow() << "][" << emptyCellsVector.at(i).getCol() << "]\n";
 				std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
-			// здесь еще надо заполнить матрицу	в нужном месте		
+			// заполняю матрицу	
 				m_matrix[emptyCellsVector.at(i).getRow()][emptyCellsVector.at(i).getCol()] = emptyCellsVector.at(i).getPossibleValElement(0);
 				emptyCellsVector.at(i).setValue(emptyCellsVector.at(i).getPossibleValElement(0), emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
-				// надо хорошенько продумать удаление, а то индекс соскальзывает и чтобы избежать рекурсии притом
+			// надо хорошенько продумать удаление, а то индекс соскальзывает и чтобы избежать рекурсии притом
 			}			
 		}
-		std::vector <Cell>::iterator iter = emptyCellsVector.begin();
-		std::vector <Cell>::iterator const_end_iter = emptyCellsVector.end();
+	
+		// хочу моздать новый вектор, который будет типа урезанный старый
 		std::vector <Cell> new_emptyCellsVector; // shorter
-		while (iter != const_end_iter) // тут разные копии вектора
+		for (int i = 0; i < emptyCellsVector.size(); i++)
 		{
-			if ((*iter).getNumOfPossibleVals() == 1)
+			if (emptyCellsVector.at(i).getNumOfPossibleVals() > 1)
 			{
-				emptyCellsVector.erase(iter);
-				// здесь итератор автоматически меняется на 1-ый элемент вектора, но почему-то дропается при сравнении в while
+				new_emptyCellsVector.push_back(emptyCellsVector.at(i));
 			}
-			else
-			{
-				iter++;
-			}
+
 		}
+		emptyCellsVector = new_emptyCellsVector;
+		new_emptyCellsVector.clear();
+		fillEmptyCells();
+
 		
 	}	
 }

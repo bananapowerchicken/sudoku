@@ -2,6 +2,7 @@
 #include "Grid.h"
 #include "Cell.h"
 #include <vector>
+#include <vector>
 
 class Solver
 {
@@ -11,7 +12,7 @@ private:
 	// for every instance of this class - it is needed to compilate
 	int m_matrix[m_rows][m_cols];
 	std::vector <Cell> emptyCellsVector;
-	
+	std::vector <Cell> new_emptyCellsVector; // shorter
 	void fillMatrix(Grid* grid);
 
 public:
