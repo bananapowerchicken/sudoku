@@ -1,2 +1,3 @@
-﻿  Grid.cpp
+﻿  Solver.cpp
+D:\code\sudoku\sudoku\sudoku\Solver.cpp(55,20): warning C4018: <: несоответствие типов со знаком и без знака
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe

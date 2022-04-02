@@ -11,7 +11,6 @@ Grid::Grid()
 		{
 			m_matrix[i][j] = j + 1;
 		}
-
 	}
 
 	m_rightShiftRow(1, 6);

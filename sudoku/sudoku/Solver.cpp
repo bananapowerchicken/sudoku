@@ -65,10 +65,10 @@ void Solver::setPossibleValuesForCell(int row, int col)
 		// check related row
 		for (k = 0; k < 9; ++k)
 		{
-			if (k != col && m_matrix[row][k] != 0 )
+			if (k != col && (m_matrix[row][k] != 0) )
 			{
-				std::cout << m_matrix[row][k] << "\n";
-				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]);
+				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[row][k] << "\n";
+ 				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]); // 2nd cycle error here
 			}
 		}		
 
