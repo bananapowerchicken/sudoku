@@ -54,25 +54,68 @@ void Solver::calculatePossibleValues()
 {
 	for (int i = 0; i < emptyCellsVector.size(); i++)
 	{
-		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
+		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol(), i);
+		std::cout << "num vector: " << i << "\n";
 		emptyCellsVector.at(i).showPossibleVals();
 	}
 }
 
-void Solver::setPossibleValuesForCell(int row, int col)
+void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 {			
 		int k; // counter
 		// check related row
+		std::cout << "cell: " << m_matrix[row][col] << "[" << row << "][" << col << "]\n";
 		for (k = 0; k < 9; ++k)
 		{
 			if (k != col && (m_matrix[row][k] != 0) )
 			{
 				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[row][k] << "\n";
  				emptyCellsVector.at(row).deletePossibleVal(m_matrix[row][k]); // 2nd cycle error here
+
 			}
 		}		
 
 		// check related col
 
 		// check related square	
+}
+
+void Solver::fillEmptyCells()
+{
+	if (!emptyCellsVector.size())
+	{
+		std::cout << "Sudoku is solved! :)\n";
+	}
+	else 
+	{
+		for (int i = 0; i < emptyCellsVector.size(); i++)
+		{
+			// если тут одно возможное значение для этой клетки - то его и поставить	
+			if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
+			{		
+				std::cout << "Cell [" << emptyCellsVector.at(i).getRow() << "][" << emptyCellsVector.at(i).getCol() << "]\n";
+				std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
+			// заполняю матрицу	
+				m_matrix[emptyCellsVector.at(i).getRow()][emptyCellsVector.at(i).getCol()] = emptyCellsVector.at(i).getPossibleValElement(0);
+				emptyCellsVector.at(i).setValue(emptyCellsVector.at(i).getPossibleValElement(0), emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
+			// надо хорошенько продумать удаление, а то индекс соскальзывает и чтобы избежать рекурсии притом
+			}			
+		}
+	
+		// хочу моздать новый вектор, который будет типа урезанный старый
+		std::vector <Cell> new_emptyCellsVector; // shorter
+		for (int i = 0; i < emptyCellsVector.size(); i++)
+		{
+			if (emptyCellsVector.at(i).getNumOfPossibleVals() > 1)
+			{
+				new_emptyCellsVector.push_back(emptyCellsVector.at(i));
+			}
+
+		}
+		emptyCellsVector = new_emptyCellsVector;
+		new_emptyCellsVector.clear();
+		fillEmptyCells();
+
+		
+	}	
 }

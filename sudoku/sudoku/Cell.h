@@ -27,6 +27,8 @@ public:
 	void setValue(int val, int i, int j) { m_value = val; m_row = i; m_col = j; };
 	int getRow() { return m_row; };
 	int getCol() { return m_col; };
+	int getNumOfPossibleVals() { return m_possibleVals.size(); };
+	int getPossibleValElement(int i) { return m_possibleVals.at(i); };
 	//void setPossibleVals(); // many deletions
 	//bool init(int i, int j);
 	//int setRandomValue(); // sets random value	
