@@ -63,19 +63,18 @@ void Solver::calculatePossibleValues()
 void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 {			
 		int k; // counter
-		// check related row
+		// check related col
 		std::cout << "cell: " << m_matrix[row][col] << "[" << row << "][" << col << "]\n";
 		for (k = 0; k < 9; ++k)
 		{
 			if ( m_matrix[k][col] != 0 )
 			{
-				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[k][col] << "\n";
- 				emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[k][row]); // 2nd cycle error here
-
+				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[k][col] << "\n";				
+				emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[k][col]);
 			}
 		}		
 
-		// check related col
+		// check related row
 
 		// check related square	
 }

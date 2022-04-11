@@ -24,10 +24,12 @@ Grid::Grid()
 
 	// debug - artificial fixed putting zeros in some positions
 	m_matrix[0][0] = 0;
-	m_matrix[2][1] = 0;
+	m_matrix[1][0] = 0;
+	m_matrix[2][0] = 0;
+	//m_matrix[2][1] = 0;
 	//m_matrix[2][2] = 0;
-	m_matrix[7][3] = 0;
-	m_matrix[7][4] = 0;
+	//m_matrix[7][3] = 0;
+	//m_matrix[7][4] = 0;
 	//m_matrix[7][5] = 0;
 }
 
