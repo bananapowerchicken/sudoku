@@ -64,6 +64,7 @@ void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 {			
 		int k; // counter
 		// check related col
+		std::cout << "Check related col\n";
 		std::cout << "cell: " << m_matrix[row][col] << "[" << row << "][" << col << "]\n";
 		for (k = 0; k < 9; ++k)
 		{
@@ -72,9 +73,18 @@ void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[k][col] << "\n";				
 				emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[k][col]);
 			}
-		}		
+		}
 
 		// check related row
+		std::cout << "Check related row\n";
+		for (k = 0; k < 9; ++k)
+		{
+			if (m_matrix[row][k] != 0)
+			{
+				std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[row][k] << "\n";
+				emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[row][k]);
+			}
+		}
 
 		// check related square	
 }
