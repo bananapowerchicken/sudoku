@@ -87,6 +87,21 @@ void Solver::setPossibleValuesForCell(int row, int col, int cell_index)
 		}
 
 		// check related square	
+		std::cout << "Check related square\n";
+		int i_min = row / 3 * 3; // min row in square
+		int j_min = col / 3 * 3; // min col in square
+		for (int i = i_min; i < i_min + 3; i++)
+		{
+			for (int j = j_min; j < j_min + 3; j++)
+			{
+				if (m_matrix[i][j] != 0)
+				{
+					std::cout << "to delete : " << "[" << row << "][" << col << "] " << m_matrix[i][j] << "\n";
+					emptyCellsVector.at(cell_index).deletePossibleVal(m_matrix[i][j]);
+				}
+			}
+		}
+
 }
 
 void Solver::fillEmptyCells()
