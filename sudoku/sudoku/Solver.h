@@ -21,5 +21,5 @@ public:
 	void getEmptyCells(Grid* grid);
 	void calculatePossibleValues();
 	void setPossibleValuesForCell(int row, int col, int cell_index);
-	void fillEmptyCells();
+	void fillEmptyCells(); // заполнить те, которые однозначны
 };

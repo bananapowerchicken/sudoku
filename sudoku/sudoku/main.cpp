@@ -20,6 +20,8 @@ int main()
 	solver.showCurrentMatrix(); // making sure that matrix to solve is copied properly
 	solver.getEmptyCells(&grid); // filling empty cells vector
 	solver.calculatePossibleValues(); // going through empty cells vector and minimizing possible values for each element
+	solver.fillEmptyCells();
+	solver.showCurrentMatrix();
 
 	return 0;
 }

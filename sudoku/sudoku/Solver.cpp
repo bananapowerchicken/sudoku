@@ -56,7 +56,8 @@ void Solver::calculatePossibleValues()
 	{
 		setPossibleValuesForCell(emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol(), i);
 		std::cout << "num vector: " << i << "\n";
-		emptyCellsVector.at(i).showPossibleVals();
+		emptyCellsVector.at(i).showPossibleVals();	
+		
 	}
 }
 
@@ -111,35 +112,14 @@ void Solver::fillEmptyCells()
 		std::cout << "Sudoku is solved! :)\n";
 	}
 	else 
-	{
+	{	// заполняю однозначные клетки
 		for (int i = 0; i < emptyCellsVector.size(); i++)
 		{
-			// если тут одно возможное значение для этой клетки - то его и поставить	
 			if (emptyCellsVector.at(i).getNumOfPossibleVals() == 1)
-			{		
-				std::cout << "Cell [" << emptyCellsVector.at(i).getRow() << "][" << emptyCellsVector.at(i).getCol() << "]\n";
-				std::cout << "The only variant is: " << emptyCellsVector.at(i).getPossibleValElement(0) << "\n";
-			// заполняю матрицу	
-				m_matrix[emptyCellsVector.at(i).getRow()][emptyCellsVector.at(i).getCol()] = emptyCellsVector.at(i).getPossibleValElement(0);
-				emptyCellsVector.at(i).setValue(emptyCellsVector.at(i).getPossibleValElement(0), emptyCellsVector.at(i).getRow(), emptyCellsVector.at(i).getCol());
-			// надо хорошенько продумать удаление, а то индекс соскальзывает и чтобы избежать рекурсии притом
-			}			
-		}
-	
-		// хочу моздать новый вектор, который будет типа урезанный старый
-		std::vector <Cell> new_emptyCellsVector; // shorter
-		for (int i = 0; i < emptyCellsVector.size(); i++)
-		{
-			if (emptyCellsVector.at(i).getNumOfPossibleVals() > 1)
 			{
-				new_emptyCellsVector.push_back(emptyCellsVector.at(i));
+				m_matrix[emptyCellsVector.at(i).getRow()][emptyCellsVector.at(i).getCol()] = emptyCellsVector.at(i).getPossibleValElement(0);
 			}
-
 		}
-		emptyCellsVector = new_emptyCellsVector;
-		new_emptyCellsVector.clear();
-		fillEmptyCells();
-
-		
+		//fillEmptyCells();		
 	}	
 }

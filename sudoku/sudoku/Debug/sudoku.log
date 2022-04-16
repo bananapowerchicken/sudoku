@@ -1,7 +1,4 @@
-﻿  Grid.cpp
-  Solver.cpp
+﻿  Solver.cpp
 D:\code\sudoku\sudoku\sudoku\Solver.cpp(55,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\code\sudoku\sudoku\sudoku\Solver.cpp(115,21): warning C4018: <: несоответствие типов со знаком и без знака
-D:\code\sudoku\sudoku\sudoku\Solver.cpp(131,21): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода...
+D:\code\sudoku\sudoku\sudoku\Solver.cpp(116,21): warning C4018: <: несоответствие типов со знаком и без знака
   sudoku.vcxproj -> D:\code\sudoku\sudoku\Debug\sudoku.exe
